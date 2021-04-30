@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-list';
+  title = 'my-list-update';
+  console.log(this.title);
 }
