@@ -1,0 +1,10 @@
+<h2 class="text-center">Film Details</h2>
+<hr>
+<div class="container text-center">
+    <h6 class="display-6" *ngFor="let films of film">
+        Film Name : <strong>{{films.filmName}}</strong><br><br>
+        Film Collection : <strong>Rs. {{films.filmCollection}}</strong><br><br>
+        Film Director : <strong>{{films.filmDirectors}}</strong><br><br>
+        Film Rating : <strong><i class="fa fa-star" aria-hidden="true"></i>&ensp;{{films.filmRating}}</strong><br><br>
+    </h6>
+</div>

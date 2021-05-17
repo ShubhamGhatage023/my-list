@@ -1,0 +1,17 @@
+<h2 class="text-center">Director List</h2>
+<hr>
+
+<div *ngFor="let director of directors" class="container m-4 p-3 row main mx-auto">
+    <div class="col-sm-6 detail">    
+        Director Name : {{director.directorName}}<br>
+        Director Age : {{director.directorAge}}<br>
+        Director Gender : {{director.directorGender}} <br>
+        No. of Awards : {{director.directorAwards}}<br>
+    </div>
+    <div class="col-sm-3 text-center"><br>
+        <button class="btn btn-primary btn-sm" (click)="onSelect(director)">Update</button>
+    </div>
+    <div class="col-sm-3 text-center"><br>
+        <button class="btn btn-primary btn-sm" (click)="onDetail(director)">Details ></button>
+    </div>
+</div><br>

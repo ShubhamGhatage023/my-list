@@ -1,0 +1,16 @@
+<h2 class="text-center">Film List</h2>
+<hr>
+<div *ngFor="let film of films" class="container m-4 p-3 mx-auto main row" >
+    <div class="col-6 detail">
+        Film Name : {{film.filmName}}<br>
+        Film Collection : Rs. {{film.filmCollection}}<br>
+        Film Director : {{film.filmDirectors}}<br>
+        Film Rating : <i class="fa fa-star" aria-hidden="true"></i>&ensp;{{film.filmRating}} <br>
+    </div>
+    <div class="col-3 detail text-center"><br>
+        <button class="btn btn-danger btn-sm" (click)="onDelete(film.filmName)">Delete</button>
+    </div>
+    <div class="col-3 detail text-center"><br>
+        <button class="btn btn-primary btn-sm" (click)="onDetail(film)">Details ></button>
+    </div>
+</div><br>

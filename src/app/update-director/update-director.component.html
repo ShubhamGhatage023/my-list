@@ -1,0 +1,37 @@
+<div class="container">
+    <h1 class="text-center">Update Director Details</h1><br>
+    <hr><br>
+    <form [formGroup]="directorForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Director Name : </label>
+        <input type="text" value={{director.directorName}} class="form-control" disabled>
+      </div><br>
+
+      <div class="form-group">
+        <label>Director Age : </label>
+        <input type="text" [class.is-invalid]="directorForm.get('directorAge').invalid &&
+        directorForm.get('directorAge').touched" formControlName="directorAge" class="form-control" >
+        <small class="text-danger" [class.d-none]="directorForm.get('directorAge').valid ||
+        directorForm.get('directorAge').untouched">director age is required</small> 
+      </div><br>
+
+      <div class="form-group">
+        <label>Director Gender : </label>
+        <input type="text" value={{director.directorGender}} class="form-control" disabled>
+      </div><br>
+
+      <div class="form-group">
+        <label>No. of Awards :</label>
+        <input type="text" [class.is-invalid]="directorForm.get('directorAwards').invalid &&
+        directorForm.get('directorAwards').touched" formControlName="directorAwards" class="form-control">
+        <small class="text-danger" [class.d-none]="directorForm.get('directorAwards').valid ||
+        directorForm.get('directorAwards').untouched">no. of awards is required</small> 
+      </div><br>
+
+      <div class="text-center">
+        <button type="submit" [disabled]="directorForm.invalid" class="btn btn-dark">Update</button>
+      </div><br>
+    </form> 
+  </div>
+

@@ -1,0 +1,47 @@
+<div class="container">
+    <h1 class="text-center">Insert Film Details</h1><br>
+    <hr><br>
+    <form [formGroup]="filmForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Film Name :</label>
+        <input type="text" [class.is-invalid]="filmForm.get('filmName').invalid &&
+        filmForm.get('filmName').touched" formControlName="filmName" class="form-control" placeholder="Enter film name">
+        <small class="text-danger" [class.d-none]="filmForm.get('filmName').valid ||
+        filmForm.get('filmName').untouched">film name is required</small> 
+      </div><br>
+
+      <div class="form-group">
+        <label>Film Collection : </label>
+        <input type="text" [class.is-invalid]="filmForm.get('filmCollection').invalid &&
+        filmForm.get('filmCollection').touched" formControlName="filmCollection" class="form-control" placeholder="Enter film collection">
+        <small class="text-danger" [class.d-none]="filmForm.get('filmCollection').valid ||
+        filmForm.get('filmCollection').untouched">film collection is required</small> 
+      </div><br> 
+
+      <label>Film Director :</label><br>
+      <div class="row">
+        <div class="col-sm-4" *ngFor="let director of directors">
+        <label>
+          <input type="checkbox" [value]="director.directorName" (change)="onCheckboxChange($event)">
+          {{director.directorName}}
+        </label>
+        </div>
+    </div><br>
+      <button type="button" routerLink="/insertDirector" class="btn btn-primary btn-sm">Add Director</button>
+      <br><br>
+
+      <div class="form-group">
+        <label>Film Rating :</label>
+        <input type="text" [class.is-invalid]="filmForm.get('filmRating').invalid &&
+        filmForm.get('filmRating').touched" formControlName="filmRating" class="form-control" placeholder="Enter film rating">
+        <small class="text-danger" [class.d-none]="filmForm.get('filmRating').valid ||
+        filmForm.get('filmRating').untouched">rating is required</small> 
+      </div><br>
+
+      <div class="text-center">
+        <button type="submit" [disabled]="filmForm.invalid" class="btn btn-dark">Submit</button>
+      </div><br>
+    </form> 
+  </div>
+

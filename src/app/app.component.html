@@ -7,6 +7,44 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>This Is List updated</h1>
+  <div class="container-fluid p-4 text-center bg-info text-dark">
+    <h1 class="display-2"><b>Movies World</b></h1>
+  </div>
+  <ul class="navbar navbar-dark bg-dark text-white">
+    <button routerLink="/directors" (click)="setVisible=false"  type="button" class="btn float-left text-white">Directors</button>
+    <button routerLink="/films" (click)="setVisible=false" type="button" class="btn float-right text-white">Films</button>
+    <button routerLink="/insertDirector" (click)="setVisible=false"  type="button" class="btn float-left text-white">Insert Director</button>
+    <button routerLink="/insertFilm" (click)="setVisible=false" type="button" class="btn float-right text-white">Insert Film</button>
+  </ul>
+
+  <div *ngIf="setVisible"><br><br><br><br>
+    <h1 class="display-1 text-center">Welcome to Movies World !</h1>
+  </div>
+
+  <div *ngIf="!setVisible">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!-- <form [formGroup]="resgistrationForm" (ngSubmit)="onSubmit()" class="container bg-muted m-6">
+    <div class="form-group" >
+      <div class="row">
+        <div class="col-sm-6" *ngFor="let techn of Tech">
+        <label>
+          <input type="checkbox" [value]="techn.tech" (change)="onCheckboxChange($event)">
+          {{techn.tech}}
+        </label>
+        </div>
+      </div>
+    </div><br>
+    <button type="submit">Send</button>
+    </form>
+    <input type="text" value="html,input,tag" data-role="tagsinput">
+    <div *ngFor="let que of questions">
+      <p>Que ID : {{que._id}}
+          <br>
+      Question : {{que.question}} 
+      <br>
+      </p>    
+      </div> -->
 </body>
 </html>
